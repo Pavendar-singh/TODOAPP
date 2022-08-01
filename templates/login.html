@@ -1,0 +1,31 @@
+
+<!-- form start here -->
+    
+        
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="col-lg-4 mx-auto shadow p-0 mt-4">
+        <div class="alert alert-info">
+            <h2>Login Here</h2>
+        </div>
+    
+        <div class=" p-4">
+            <form action="login" method="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+                <br>
+                <input type="submit" value="login" class="btn btn-info"><br>
+                <hr>
+                <div class="checkbox mb-3 text-center">
+                    <br>
+                    <h5><b>Do not have an Account</b></h5>
+                    <p style="color:chartreuse"><b>Please make account first</b></p>
+                    <br>
+                    <a class="btn btn-primary" href="{%url 'signup'%}">Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    {% endblock %}
+
+   
